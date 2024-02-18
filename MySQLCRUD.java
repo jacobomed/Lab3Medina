@@ -18,7 +18,7 @@ public  class MySQLCRUD {
     try {
     connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
 
-    insertStuddent(connection, 1, "Jack", "Black", 40, "jackblack@example");
+    interStudent(connection, 1, "Jack", "Black", 40, "jackblack@example");
 
     List<Student> students = getAllStudents(connection);
     for (Student student : students) {
@@ -56,7 +56,9 @@ public  class MySQLCRUD {
         }
     }
     private static List<Student> getAllStudents(Connection connection) throws SQLException {
+        List<Student> students = new ArrayList<>();
         String sql = "SELECT id, firstName, lastName, age, email FROM students";
+
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
