@@ -16,6 +16,7 @@ class Block {
         this.timestamp = new Date().getTime();
         this.data = data;
         this.hash = calculateHash();
+    }
 
         public String calculateHash() {
             try {
@@ -41,22 +42,31 @@ class Block {
         public long getTimestamp () {
             return timestamp;
         }
+        public String getPreviousHash() {
+            return previousHash;
+        }
         public String getHash () {
             return hash;
         }
         public String getData () {
-            return data
+            return data;
         }
     }
 
     class Blockchain {
-        private List<Blockchain> chain;
+        private List<Block> chain;
 
-        public void addBlock(String data){
+        public Blockchain() {
+            chain = new ArrayList<Block>();
+            chain.add(new Block(0, "0", "Genesis Block"));
+        }
+
+        public void addBlock(String data) {
             Block previousBlock = chain.get(chain.size() - 1);
             Block newBlock = new Block(previousBlock.getIndex() + 1, previousBlock.getHash(), data);
             chain.add(newBlock);
         }
+
 
         public void printBlockchain() {
             for (Block block : chain) {
@@ -73,6 +83,10 @@ class Block {
         public static void main(String[] args) {}
         Blockchain blockchain = new Blockchain();
 
-        blockchain.addBlock()
+        blockchain.addBlock("Transaction 1");
+        blockchain.addBlock("Transaction 2");
+        blockchain.addBlock("Transaction 3");
+
+        blockchain.printBlockchain();
     }
 }
