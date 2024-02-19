@@ -1,4 +1,3 @@
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -6,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public  class MySQLCRUD {
     private static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/School";
@@ -16,7 +14,7 @@ public  class MySQLCRUD {
     public static void main(String[] args) {
     Connection connection = null;
     try {
-    connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+     connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
 
     interStudent(connection, 1, "Jack", "Black", 40, "jackblack@example");
 
