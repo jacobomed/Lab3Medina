@@ -7,14 +7,17 @@ public class RedisCRUD {
     public static void main(String[] args) {
         try {
             Jedis jedis = new Jedis("localhost");
-
+            //Create (Set a key-value pair)
             jedis.set("key", "value");
 
+            //Read (Get the value of a key)
             String value = jedis.get("key");
             System.out.println(value);
 
+            //Update (Update the value of a key)
             jedis.set("key", "newValue");
 
+            //Delete (Delete a key-value pair)
             jedis.del("key");
 
             jedis.close();
