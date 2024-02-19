@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class MySQLCRUD {
+  /*
     private static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/School";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "IST888IST888";
@@ -86,26 +87,6 @@ public  class MySQLCRUD {
             preparedStatement.executeUpdate();
         }
     }
-}
 
-class Student {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private  int age;
-    private String email;
-
-    public Student(int id, String firstName, String lastName, int age, String email){
-
-    }
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id= " + id +
-                ", firstName=" + firstName +'\''+
-                ", lastName+" + lastName + '\'' +
-                "age=" + age +
-                ", email= " + email + '\''+
-                '}';
-    }
+   */
 }
