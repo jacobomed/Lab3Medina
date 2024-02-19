@@ -58,6 +58,7 @@ class Block {
 
         public Blockchain() {
             chain = new ArrayList<Block>();
+            // Create the genesis block (the first block in the chain)
             chain.add(new Block(0, "0", "Genesis Block"));
         }
 
@@ -68,25 +69,30 @@ class Block {
         }
 
 
-        public void printBlockchain() {
-            for (Block block : chain) {
-                System.out.println("Block #" + block.getIndex());
-                System.out.println("Timestamp: " + block.getTimestamp());
-                System.out.println("Previous Hash: " + block.getPreviousHash());
-                System.out.println("Data: " + block.getData());
-
+            public void printBlockchain() {
+                for (Block block : chain) {
+                    System.out.println("Block #" + block.getIndex());
+                    System.out.println("Timestamp: " + block.getTimestamp());
+                    System.out.println("Previous Hash: " + block.getPreviousHash());
+                    System.out.println("Hash: " + block.getHash());
+                    System.out.println("Data: " + block.getData());
+                    System.out.println();
+                }
             }
+
         }
-    }
 
-    public class SimpleBlockchain {
-        public static void main(String[] args) {}
-        Blockchain blockchain = new Blockchain();
+        public class SimpleBlockchain {
+            public static void main(String[] args) {
 
-        blockchain.addBlock("Transaction 1");
-        blockchain.addBlock("Transaction 2");
-        blockchain.addBlock("Transaction 3");
+                Blockchain blockchain = new Blockchain();
 
-        blockchain.printBlockchain();
-    }
+                blockchain.addBlock("Transaction 1");
+                blockchain.addBlock("Transaction 2");
+                blockchain.addBlock("Transaction 3");
+
+                blockchain.printBlockchain();
+            }
 }
+
+

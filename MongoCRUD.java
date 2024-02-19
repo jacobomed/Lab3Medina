@@ -3,7 +3,9 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.FindIterable;
-import org.bson.Document
+import org.bson.Document;
+
+
 public class MongoCRUD {
     public static void main(String[] args) {
         try (MongoClient mongoCLient = MongoClients.create("mongodb://localhost:27017")) {
