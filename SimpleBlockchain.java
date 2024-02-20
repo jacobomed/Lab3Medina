@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -85,11 +87,20 @@ class Block {
         public class SimpleBlockchain {
             public static void main(String[] args) {
 
+                Gson gson = new Gson();
+                Customer customer1 = new Customer("101", "John Doe", "john@example", "123 Street rd");
+                Customer customer2 = new Customer("102", "Jacobo Doe", "jacobo@example", "124 Street rd");
+                Customer customer3 = new Customer("103", "Jordan Doe", "jordan@example", "125 Street rd");
+                String jcustomer = gson.toJson(customer1);
+                String jcustomer2 = gson.toJson(customer2);
+                String jcustomer3 = gson.toJson(customer3);
+
+
                 Blockchain blockchain = new Blockchain();
 
-                blockchain.addBlock("Transaction 1");
-                blockchain.addBlock("Transaction 2");
-                blockchain.addBlock("Transaction 3");
+                blockchain.addBlock(jcustomer);
+                blockchain.addBlock(jcustomer2);
+                blockchain.addBlock(jcustomer3);
 
                 blockchain.printBlockchain();
             }

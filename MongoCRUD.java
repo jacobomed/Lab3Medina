@@ -32,8 +32,8 @@ public class MongoCRUD {
 
                 // Update
 
-                //Document updatedCustomer = new Document("$set", new Document("Silhouette", "Updated Silhouette"));
-                //collection.updateOne(new Document("Silhouette", "Jordan 1"), updatedCustomer);
+                //Document updatedCustomer = new Document("$set", new Document("Name", "Updated Name"));
+                //collection.updateOne(new Document("Name", "Jordan"), updatedCustomer);
 
                 // Read again
                 customers = collection.find();
@@ -42,7 +42,7 @@ public class MongoCRUD {
                 }
 
                 // Delete
-                collection.deleteOne(new Document("Sihlouette", "Jordan 1"));
+                collection.deleteOne(new Document("Name", "Jordan"));
 
             }
         }
