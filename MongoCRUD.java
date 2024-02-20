@@ -17,7 +17,7 @@ public class MongoCRUD {
                 MongoCollection<Document> collection = database.getCollection("Customer");
 
                 Gson gson = new Gson();
-                Customer customer = new Customer("101", "John Doe", "john@example", "123 Street rd", "20", "123456", "male");
+                Customer customer = new Customer("101", "John Doe", "john@example", "123 Street rd");
                 String jcustomer = gson.toJson(customer);
 
                 // Example: Insert a document

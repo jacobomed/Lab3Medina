@@ -8,7 +8,7 @@ public class RedisCRUD {
     public static void main(String[] args) {
         try {
             Gson gson = new Gson();
-            Customer customer = new Customer("101", "John Doe", "john@example", "123 Street rd", "20", "123456", "male");
+            Customer customer = new Customer("101", "John Doe", "john@example", "123 Street rd");
             String jcustomer = gson.toJson(customer);
 
             Jedis jedis = new Jedis("localhost", 6379);
