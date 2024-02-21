@@ -1,8 +1,8 @@
 public class Customer {
-    private String id;
-    private String name;
-    private String age;
-    private String address;
+    public String id;
+    public String name;
+    public String age;
+    public String address;
 
     public Customer(String id, String name, String age, String address) {
         this.id = id;
