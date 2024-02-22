@@ -24,12 +24,17 @@ public class MySQLCRUD {
     public static void createCustomer(Connection connection, Scanner scanner) throws SQLException {
         System.out.print("Enter id: ");
         String id = scanner.next();
+        scanner.nextLine();
+
         System.out.print("Enter name: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
+
         System.out.print("Enter age: ");
-        String age = scanner.next();
+        String age = scanner.nextLine();
+
         System.out.print("Enter address: ");
-        String address = scanner.next();
+        String address = scanner.nextLine();
+
         insertCustomer(connection, id, name, age, address);
     }
 
@@ -109,7 +114,7 @@ public static void sqlMenu() {
         throw new RuntimeException(e);
     }
     Scanner scanner = new Scanner((System.in));
-    choice = Integer.parseInt((scanner.nextLine()));
+
 
     System.out.println("1. Create customer");
     System.out.println("2. Read customers");

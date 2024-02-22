@@ -12,20 +12,22 @@ public class Main {
             case 1:
                 System.out.println("MySQL");
                 MySQLCRUD.sqlMenu();
-                Scanner scanner1 = new Scanner((System.in));
-                int choice1;
-                choice1 = Integer.parseInt((scanner1.nextLine()));
-
-
-
                 break;
 
             case 2:
                 System.out.println("MongoDB");
                 MongoCRUD.mongoMenu();
-                Scanner scanner2 = new Scanner((System.in));
-                int choice2;
-                choice2= Integer.parseInt((scanner2.nextLine()));
+                break;
+
+                case 3:
+                    System.out.println("Redis");
+                    RedisCRUD.redisMenu();
+                    break;
+
+            case 4:
+                System.out.println("BlockChain");
+                SimpleBlockchain.main();
+
 
         }
     }

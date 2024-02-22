@@ -85,7 +85,7 @@ class Block {
         }
 
         public class SimpleBlockchain {
-            public static void main(String[] args) {
+            public static void main() {
 
                 Gson gson = new Gson();
                 Customer customer1 = new Customer("101", "John Doe", "john@example", "123 Street rd");
