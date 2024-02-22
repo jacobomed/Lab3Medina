@@ -1,7 +1,17 @@
+/** Project: IST242Lab3
+ * Purpose Details: TO create CRUD operations for different databases
+ * Course: IST242
+ * Author: Jacobo Medina
+ * Date Developed:2-18-2024
+ * Last Date Changed: 2-21-2024
+ * Rev: latest update 2-21-2024
+
+ */
+
+
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.exceptions.JedisConnectionException;
 import com.google.gson.Gson;
-
 import java.util.Scanner;
 
 public class RedisCRUD {
