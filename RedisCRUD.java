@@ -5,7 +5,16 @@ import com.google.gson.Gson;
 import java.util.Scanner;
 
 public class RedisCRUD {
+
+    /**
+     * Jacobo Medina
+     */
     public static void main(String[] args) {
+
+        /**
+         * This is the main function
+         */
+
         try {
             // Your code for setting up Redis and performing initial operations
 
@@ -16,8 +25,16 @@ public class RedisCRUD {
         redisMenu(); // Call redisMenu() only once, outside of any loops
     }
 
-
+    /**
+     * Jacobo Medina
+     */
     public static void redisMenu() {
+
+    /**
+     * This is the menu display and options for the Redis menu. It contains all the code neccessary to create, read, update
+     * new info
+     */
+
         int choice;
         Scanner scanner = new Scanner(System.in);
         Jedis jedis = new Jedis("localhost", 6379);

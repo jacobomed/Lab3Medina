@@ -1,6 +1,17 @@
 import java.util.Scanner;
 
+
+/**
+ * Jacobo Medina
+ */
+
 public class Main {
+
+    /**
+     * The main class is used to display my initial menu. This is where the initial menu is created so user can choose
+     * which database to use
+     */
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
 

@@ -1,3 +1,6 @@
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,7 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+/**
+ * Jacobo Medina
+ */
+
 public class MySQLCRUD {
+
+    /**
+     * The MySQLCRUD is used to set up the neccessary connections and parameters to keep updating the database.
+     */
+
     private static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/Store";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "IST888IST888";
@@ -21,7 +34,18 @@ public class MySQLCRUD {
         }
     }
 
+    /**
+     * Jacobo Medina
+     */
+
     public static void createCustomer(Connection connection, Scanner scanner) throws SQLException {
+
+        /**
+         * The CreateCustomer class is used to create customers. This is where user gets to input the parameters to
+         * create a new customer into the database
+         */
+
+
         System.out.print("Enter id: ");
         String id = scanner.next();
         scanner.nextLine();
@@ -38,14 +62,35 @@ public class MySQLCRUD {
         insertCustomer(connection, id, name, age, address);
     }
 
+    /**
+     * Jacobo Medina
+     */
+
     public static void readCustomers(Connection connection) throws SQLException {
+        /**
+         * The readCustomer class is used to read customers data. This is where user gets the info on their selected
+         * customer
+         */
+
+
         List<Customer> customers = getAllCustomers(connection);
         for (Customer customer : customers) {
             System.out.println(customer);
         }
     }
 
+    /**
+     * Jacobo Medina
+     */
+
     public static void updateCustomer(Connection connection, Scanner scanner) throws SQLException {
+
+
+        /**
+         * The updateCustomer class is used to update customers data. This is where user gets to update the names of the
+         * selected customer
+         */
+
         System.out.print("Enter id of customer to update: ");
         String id = scanner.next();
         System.out.print("Enter new name: ");
@@ -53,7 +98,16 @@ public class MySQLCRUD {
         updateCustomer(connection, id, name);
     }
 
+    /**
+     * Jacobo Medina
+     */
     public static void deleteCustomer(Connection connection, Scanner scanner) throws SQLException {
+        /**
+         * The deleteCustomer class is used to delete customers data. This is where user gets to delete the
+         * selected customer
+         */
+
+
         System.out.print("Enter id of customer to delete: ");
         int id = scanner.nextInt();
         deleteCustomer(connection, id);
@@ -105,7 +159,19 @@ public class MySQLCRUD {
         }
     }
 
-public static void sqlMenu() {
+    /**
+     * Jacobo Medina
+     */
+
+
+    public static void sqlMenu() {
+
+        /**
+         * The sqlMenu class is used to display the options of the mongo menu. This is where user gets to select
+         * what CRUD operation they wish to operate
+         */
+
+
     int choice;
     Connection connection = null;
     try {

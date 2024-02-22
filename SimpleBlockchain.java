@@ -6,21 +6,48 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Jacobo Medina
+ */
 class Block {
+
+    /**
+     * This is the Block class. It sets up index, timestamp, hashes, and data strings
+     */
+
     private int index;
     private long timestamp;
     private String previousHash;
     private String hash;
     private String data;
 
+    /**
+     * Jacobo Medina
+     */
+
     public Block(int index, String previousHash, String data) {
+
+        /**
+         * This is the Block constructor. It sets up index, timestamp, hashes, and data strings
+         */
+
         this.index = index;
         this.timestamp = new Date().getTime();
         this.data = data;
         this.hash = calculateHash();
     }
 
-        public String calculateHash() {
+    /**
+     * Jacobo Medina
+     */
+
+    public String calculateHash() {
+
+        /**
+         * This is the Hash calculator . It's used to get a new hash for each file
+         */
+
+
             try {
                 MessageDigest digest = MessageDigest.getInstance("SHA-256");
                 String input = index + timestamp + previousHash + data;
@@ -55,12 +82,22 @@ class Block {
         }
     }
 
-    class Blockchain {
+/**
+ * Jacobo Medina
+ */
+
+class Blockchain {
+
+    /**
+     * This is the Blockchain class . It's used to create the blockchain and gather the data in order ot be displayed
+     */
+
+
         private List<Block> chain;
 
         public Blockchain() {
             chain = new ArrayList<Block>();
-            // Create the genesis block (the first block in the chain)
+
             chain.add(new Block(0, "0", "Genesis Block"));
         }
 
@@ -84,7 +121,18 @@ class Block {
 
         }
 
-        public class SimpleBlockchain {
+/**
+ * Jacobo Medina
+ */
+
+public class SimpleBlockchain {
+
+    /**
+     * This is the SimpleBlockchain class . It's used to insert the
+     */
+
+
+
             public static void main() {
 
                 Gson gson = new Gson();
